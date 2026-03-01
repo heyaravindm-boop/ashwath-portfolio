@@ -215,6 +215,25 @@ export const Posts: CollectionConfig<'posts'> = {
       ],
     },
     slugField(),
+    {
+      name: 'showInMyWork',
+      type: 'checkbox',
+      label: 'Show in My Work',
+      defaultValue: false,
+      admin: {
+        position: 'sidebar',
+        description: 'Display this post as a book card in the My Work section on the home page.',
+      },
+    },
+    {
+      name: 'bookPageColor',
+      type: 'text',
+      label: 'Book Page Color',
+      admin: {
+        position: 'sidebar',
+        description: 'Hex color for the book card pages, e.g. #E4E1DE. Only used if Show in My Work is checked.',
+      },
+    },
   ],
   hooks: {
     afterChange: [revalidatePost],

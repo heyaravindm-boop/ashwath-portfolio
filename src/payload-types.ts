@@ -277,6 +277,14 @@ export interface Post {
    */
   generateSlug?: boolean | null;
   slug: string;
+  /**
+   * Display this post as a book card in the My Work section on the home page.
+   */
+  showInMyWork?: boolean | null;
+  /**
+   * Hex color for the book card pages, e.g. #E4E1DE. Only used if Show in My Work is checked.
+   */
+  bookPageColor?: string | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -1216,6 +1224,8 @@ export interface PostsSelect<T extends boolean = true> {
       };
   generateSlug?: T;
   slug?: T;
+  showInMyWork?: T;
+  bookPageColor?: T;
   updatedAt?: T;
   createdAt?: T;
   _status?: T;

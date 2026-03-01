@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const skills = [
@@ -258,12 +259,12 @@ export default function ResumePage() {
                 >
                   Portfolio
                 </h3>
-                <a
+                <Link
                   href="/portfolio"
                   className="text-xs font-bold uppercase tracking-widest text-[#B8574D] border border-[#B8574D] rounded-full px-3 py-1 hover:bg-[#B8574D] hover:text-white transition-colors"
                 >
                   View All
-                </a>
+                </Link>
               </div>
 
               <div className="grid grid-cols-2 gap-4">

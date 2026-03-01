@@ -18,7 +18,9 @@ export const MyWork: React.FC = async () => {
   })
 
   const projects = result.docs.map((post) => {
+    const bookCoverImage = (post as any).bookCoverImage as Media | null | undefined
     const heroImage = post.heroImage as Media | null | undefined
+    const coverImage = bookCoverImage ?? heroImage
     const firstCategory =
       Array.isArray(post.categories) && post.categories.length > 0
         ? (post.categories[0] as Category)
@@ -27,8 +29,8 @@ export const MyWork: React.FC = async () => {
     return {
       title: post.title,
       category: firstCategory?.title ?? 'Portfolio',
-      description: post.meta?.description ?? '',
-      coverImage: heroImage?.url ?? '/books/cover1.png',
+      description: (post as any).postSnippet ?? post.meta?.description ?? '',
+      coverImage: coverImage?.url ?? '/books/cover1.png',
       pageColor: (post as any).bookPageColor ?? '#E4E1DE',
       href: `/posts/${post.slug}`,
     }

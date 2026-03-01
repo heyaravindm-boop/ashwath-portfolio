@@ -216,6 +216,26 @@ export const Posts: CollectionConfig<'posts'> = {
     },
     slugField(),
     {
+      name: 'bookCoverImage',
+      type: 'upload',
+      relationTo: 'media',
+      label: 'Post Cover Image',
+      admin: {
+        position: 'sidebar',
+        description: 'Cover image shown on the book card in My Work. Falls back to Hero Image if not set.',
+      },
+    },
+    {
+      name: 'postSnippet',
+      type: 'textarea',
+      label: 'Post Snippet',
+      maxLength: 1000,
+      admin: {
+        position: 'sidebar',
+        description: 'Short summary shown inside the book card when it opens on the home page.',
+      },
+    },
+    {
       name: 'showInMyWork',
       type: 'checkbox',
       label: 'Show in My Work',

@@ -278,6 +278,14 @@ export interface Post {
   generateSlug?: boolean | null;
   slug: string;
   /**
+   * Cover image shown on the book card in My Work. Falls back to Hero Image if not set.
+   */
+  bookCoverImage?: (number | null) | Media;
+  /**
+   * Short summary shown inside the book card when it opens on the home page.
+   */
+  postSnippet?: string | null;
+  /**
    * Display this post as a book card in the My Work section on the home page.
    */
   showInMyWork?: boolean | null;
@@ -1224,6 +1232,8 @@ export interface PostsSelect<T extends boolean = true> {
       };
   generateSlug?: T;
   slug?: T;
+  bookCoverImage?: T;
+  postSnippet?: T;
   showInMyWork?: T;
   bookPageColor?: T;
   updatedAt?: T;

@@ -3,7 +3,19 @@ import type { Metadata } from 'next'
 import { cn } from '@/utilities/ui'
 import { GeistMono } from 'geist/font/mono'
 import { GeistSans } from 'geist/font/sans'
+import { League_Spartan } from 'next/font/google'
+import localFont from 'next/font/local'
 import React from 'react'
+
+const leagueSpartan = League_Spartan({
+  subsets: ['latin'],
+  variable: '--font-league-spartan',
+})
+
+const theSeasons = localFont({
+  src: '../../../public/fonts/the-seasons-bold.woff',
+  variable: '--font-seasons',
+})
 
 import { AdminBar } from '@/components/AdminBar'
 import { Footer } from '@/Footer/Component'
@@ -20,7 +32,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const { isEnabled } = await draftMode()
 
   return (
-    <html className={cn(GeistSans.variable, GeistMono.variable)} lang="en" suppressHydrationWarning>
+    <html className={cn(GeistSans.variable, GeistMono.variable, leagueSpartan.variable, theSeasons.variable)} lang="en" suppressHydrationWarning>
       <head>
         <InitTheme />
         <link href="/favicon.ico" rel="icon" sizes="32x32" />

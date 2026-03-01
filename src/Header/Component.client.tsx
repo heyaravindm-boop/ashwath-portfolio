@@ -30,10 +30,20 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
   }, [headerTheme])
 
   return (
-    <header className="container relative z-20   " {...(theme ? { 'data-theme': theme } : {})}>
-      <div className="py-8 flex justify-between">
+    <header className="absolute top-0 left-0 right-0 z-50 bg-transparent w-full" {...(theme ? { 'data-theme': theme } : {})}>
+      <div className="pt-10 pb-6 px-14 flex justify-between items-center">
         <Link href="/">
-          <Logo loading="eager" priority="high" className="invert dark:invert-0" />
+          {pathname === '/resume' ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src="https://wbfa6dvbvda3vgwp.public.blob.vercel-storage.com/website-images/3.png"
+              alt="Ashwath Logo"
+              className="w-auto h-[40px]"
+              loading="eager"
+            />
+          ) : (
+            <Logo loading="eager" priority="high" />
+          )}
         </Link>
         <HeaderNav data={data} />
       </div>

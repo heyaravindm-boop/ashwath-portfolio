@@ -1,5 +1,11 @@
-import PageTemplate, { generateMetadata } from './[slug]/page'
+import { HeroLanding } from '@/components/HeroLanding'
+import { MyWork } from '@/components/MyWork'
 
-export default PageTemplate
-
-export { generateMetadata }
+export default function HomePage() {
+  return (
+    <>
+      <HeroLanding />
+      <MyWork />
+    </>
+  )
+}

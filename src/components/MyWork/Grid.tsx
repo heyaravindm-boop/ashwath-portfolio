@@ -32,7 +32,7 @@ export const MyWorkGrid: React.FC<{ projects: Project[] }> = ({ projects }) => {
   }, [])
 
   return (
-    <div ref={sectionRef} className="grid grid-cols-1 md:grid-cols-2 gap-12">
+    <div ref={sectionRef} className="grid grid-cols-1 md:grid-cols-2 gap-12 justify-items-center">
       {projects.map((project, i) => (
         <div
           key={project.title}

@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import React, { useEffect, useRef, useState } from 'react'
 
 export const HeroLanding: React.FC = () => {
@@ -162,14 +163,14 @@ export const HeroLanding: React.FC = () => {
           </p>
 
           <div className="mt-8 flex items-center gap-4" style={fadeIn(500)}>
-            <a
+            <Link
               href="/resume"
               className="px-8 py-3 bg-[#F5C200] font-bold rounded-full text-sm uppercase tracking-widest transition-all duration-300 ease-out hover:bg-[#E0B000] hover:-translate-y-1 hover:scale-105 hover:shadow-[0_8px_25px_rgba(245,194,0,0.45)] active:scale-95 active:translate-y-0"
               style={{ color: '#3d1814', fontFamily: 'var(--font-league-spartan)' }}
             >
               Resume
-            </a>
-            <a
+            </Link>
+            <Link
               href="/portfolio"
               className="px-8 py-3 border-2 font-bold rounded-full text-sm uppercase tracking-widest transition-all duration-300 ease-out hover:bg-white/10 hover:-translate-y-1 hover:scale-105 hover:shadow-[0_8px_25px_rgba(255,250,243,0.2)] active:scale-95 active:translate-y-0"
               style={{
@@ -179,7 +180,7 @@ export const HeroLanding: React.FC = () => {
               }}
             >
               Portfolio
-            </a>
+            </Link>
           </div>
 
           <p
